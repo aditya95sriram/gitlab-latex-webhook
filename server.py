@@ -19,6 +19,7 @@ import os  # for os.path
 import shutil  # to delete entire directory using rmtree
 from datetime import datetime  # for informative logging
 import signal  # for signal.alarm and timely fallback response
+import argparse
 
 from time import sleep  # for testing
 from pprint import pprint  # for pretty printing
@@ -241,8 +242,15 @@ class BuildRequestHandler(http.server.BaseHTTPRequestHandler):
             print("cleaned local repo directory")
 
 
+parser = argparse.ArgumentParser(formatter_class=argparse.ArgumentDefaultsHelpFormatter)
+parser.add_argument("-p", "--port", type=int, default=PORT,
+                    help="port to use for the server")
+
+
 if __name__ == '__main__':
+    args = parser.parse_args()
+    port = args.port
     socketserver.TCPServer.allow_reuse_address = True  # only for testing
-    with socketserver.TCPServer(("", PORT), BuildRequestHandler) as MainServer:
-        print("serving at port", PORT)
+    with socketserver.TCPServer(("", port), BuildRequestHandler) as MainServer:
+        print("serving at port", port)
         MainServer.serve_forever()

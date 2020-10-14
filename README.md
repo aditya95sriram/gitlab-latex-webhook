@@ -53,7 +53,9 @@ specified in query params. Compiled pdfs are then uploaded to owncloud.
 
 > **Note:** Since webhooks only have about 10 seconds to provide their 
 > response, the server sends back an intermediate response with the status
-> so far in case the compiling takes much longer to run.
+> so far, in case the compiling takes much longer to run.
+
+Run `python3 server.py --help` for list of options.
 
 ## Owncloud
 
