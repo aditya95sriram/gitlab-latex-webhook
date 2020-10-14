@@ -6,7 +6,7 @@ usr=$OWNCLOUD_USERNAME
 pwd=$OWNCLOUD_PASSWORD
 build_dir="$owncloud_home/latex-builds"
 auth="$usr:$pwd"
-echo "auth - $auth"  # uncomment to check if username and password are correct
+#echo "auth - $auth"  # uncomment to check if username and password are correct
 
 # first argument to script is directory name on owncloud within `build_dir`
 dirname=$1

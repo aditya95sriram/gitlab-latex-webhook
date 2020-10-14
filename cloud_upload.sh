@@ -6,7 +6,7 @@ usr=$OWNCLOUD_USERNAME
 pwd=$OWNCLOUD_PASSWORD
 build_dir="$owncloud_home/latex-builds"
 auth="$usr:$pwd"
-echo "auth - $auth"  # uncomment to check if username and password are correct
+#echo "auth - $auth"  # uncomment to check if username and password are correct
 
 # first argument to script is path to destination (on owncloud), relative to build_dir
 destpath=$1
@@ -23,4 +23,4 @@ if [ "$file_exists" -eq "200" ]; then
 else
   echo "$srcpath -> $destpath upload failed"
   exit 1
-fi;
+fi
