@@ -203,7 +203,7 @@ class BuildRequestHandler(http.server.BaseHTTPRequestHandler):
             for file in files:
                 base, ext = os.path.splitext(os.path.basename(file))
                 pdf = f"{base}.pdf"
-                srcpath = f"repo/{pdf}"
+                srcpath = f"{repo_path}/{pdf}"
                 destpath = f"{repo_name}/{pdf}"
                 try:
                     subprocess.check_output(["bash", "cloud_upload.sh",
